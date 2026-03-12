@@ -24,6 +24,16 @@ body {
     var(--biz-bg);
 }
 
+::selection {
+  background: #cfe8ee;
+  color: #153840;
+}
+
+::-moz-selection {
+  background: #cfe8ee;
+  color: #153840;
+}
+
 .masthead {
   position: sticky;
   top: 0;
@@ -31,6 +41,13 @@ body {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--biz-line);
   background: rgba(244, 247, 248, 0.9);
+}
+
+/* Keep sticky sidebar below the masthead while scrolling */
+@media (min-width: 925px) {
+  .sticky {
+    top: 5.2rem;
+  }
 }
 
 .greedy-nav {
@@ -158,7 +175,7 @@ body {
 
 .home-hero__title {
   margin: 0.45rem 0 0;
-  font-size: clamp(1.7rem, 2.3vw, 2.25rem);
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
 }
 
 .home-hero__lead {
@@ -170,6 +187,145 @@ body {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: 1rem;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 31, 39, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+  z-index: 120;
+}
+
+.contact-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+}
+
+.contact-card {
+  position: relative;
+  width: min(500px, 100%);
+  padding: 0.95rem 1rem 0.95rem;
+  border: 1px solid #cddde4;
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, #0f6d7a 0 10px, transparent 10px),
+    linear-gradient(160deg, #ffffff, #f8fbfc);
+  box-shadow: 0 26px 56px rgba(15, 39, 49, 0.24);
+  transform: translateY(6px) scale(0.98);
+  transition: transform 0.22s ease;
+  pointer-events: auto;
+}
+
+.contact-modal.is-open .contact-card {
+  transform: translateY(0) scale(1);
+}
+
+.contact-card__close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: #eff5f7;
+  color: #45616b;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-card__top {
+  display: block;
+  margin-left: 0.55rem;
+  padding-right: 2rem;
+}
+
+.contact-card__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  min-width: 0;
+}
+
+.contact-card__name {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.24rem;
+  font-weight: 700;
+  color: #163943;
+  letter-spacing: 0.003em;
+  line-height: 1.14;
+}
+
+.contact-card__role {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: #688088;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.contact-card__grid {
+  margin-top: 0.75rem;
+  margin-left: 0.55rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #d9e6eb;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 0.8rem;
+}
+
+.contact-card__grid p {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.86rem;
+  color: #2f4b56;
+  line-height: 1.42;
+}
+
+.contact-card__grid span {
+  display: block;
+  margin-bottom: 0.06rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #6f8790;
+}
+
+.contact-card__grid a {
+  color: #1a6470;
+  text-decoration: none;
+}
+
+.contact-card__grid a:hover {
+  color: #0c4f58;
+  text-decoration: underline;
+}
+
+.contact-card__grid .contact-postcode {
+  white-space: nowrap;
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
 }
 
 .kpi-grid {
@@ -280,6 +436,70 @@ body {
   margin-top: 1.2rem;
 }
 
+.learning-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--biz-line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.learning-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.78rem 0.9rem;
+  border-bottom: 1px solid #e8eff2;
+}
+
+.learning-list li:last-child {
+  border-bottom: 0;
+}
+
+.learning-list span {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.94rem;
+  color: #26414a;
+  line-height: 1.4;
+}
+
+.course-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.94rem;
+  color: #26414a;
+  line-height: 1.4;
+}
+
+.course-note {
+  display: block;
+  margin-top: 0.16rem;
+  font-size: 0.78rem;
+  color: #6f8790;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.learning-list a {
+  flex-shrink: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--biz-primary);
+}
+
+.learning-list a:hover {
+  color: #0b5058;
+}
+
 .tech-slider {
   display: grid;
   grid-auto-flow: column;
@@ -321,6 +541,33 @@ body {
   text-decoration: none;
 }
 
+/* CV page */
+.cv-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border: 1px solid var(--biz-line);
+  border-left: 4px solid var(--biz-primary);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.cv-download__title {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #193b44;
+}
+
+.cv-download .btn {
+  padding: 0.35rem 0.72rem;
+  font-size: 0.8rem;
+}
+
 /* Scroll reveal */
 [data-reveal] {
   opacity: 0;
@@ -344,6 +591,12 @@ body {
   .module-grid {
     grid-template-columns: 1fr;
   }
+
+  .learning-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -364,5 +617,29 @@ body {
 
   .page .page__inner-wrap {
     padding: 0.95rem 0.95rem 1.2rem;
+  }
+
+  .cv-download {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-card {
+    background:
+      linear-gradient(180deg, #0f6d7a 0 8px, transparent 8px),
+      linear-gradient(160deg, #ffffff, #f8fbfc);
+  }
+
+  .contact-card__top,
+  .contact-card__grid {
+    margin-left: 0;
+  }
+
+  .contact-card__role {
+    white-space: normal;
+  }
+
+  .contact-card__grid {
+    grid-template-columns: 1fr;
   }
 }
