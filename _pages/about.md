@@ -12,7 +12,7 @@ redirect_from:
   <h2 class="home-hero__title">Hi, I am Haolin Wang.</h2>
   <p class="home-hero__lead">I am an AI Research Engineer and part-time PhD student in Computer Science at the University of Sheffield. I focus on machine learning, model evaluation, and building reliable data-driven systems for real-world applications.</p>
   <div class="home-hero__actions">
-    <a class="btn" href="https://haolinwang2001.github.io/cv/">View CV</a>
+    <a class="btn" href="/cv/">View CV</a>
     <a class="btn btn--inverse" href="mailto:haolinwang2001@gmail.com">Contact</a>
   </div>
 </section>

@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-PDF version of my CV can be viewed [here](http://haolinwang2001.github.io/files/HaolinWangCV.pdf "CV")
+PDF version of my CV can be viewed [here](/files/HaolinWangCV.pdf "CV")
 
 Education
 ======
@@ -27,7 +27,7 @@ Education
     * Natural Language Processing
     * Data Science in R
     * Team Project
-  * Dissertation: [Hybrid Model of Ballistics](http://haolinwang2001.github.io/files/HybridModelOfBallistics.pdf "dissertation")
+  * Dissertation: [Hybrid Model of Ballistics](/files/HybridModelOfBallistics.pdf "dissertation")
 
 Work experience
 ======
@@ -76,4 +76,3 @@ Skills
   * Git, Linux, Bash scripting
   * HPC (SLURM)
 * **BI Tools:** QuickSight, Tableau, PowerBI
-
