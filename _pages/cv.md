@@ -67,15 +67,13 @@ Leadership Experience
 
 Skills
 ======
-* **Languages:** English, Chinese(Mandarin)
-* **Technical Skills**
-  * Python: Pandas, SciPy, NumPy, boto3, psycopg2; Tensorflow, PyTorch
+* **Languages:** English (professional proficiency), Chinese (native)
+* **Technical Skills:**
+  * Python (PyTorch, TensorFlow, scikit-learn)
+  * GPU training (CUDA)
   * SQL
-  * R
-  * MATLAB
-  * Business Intelligence:
-    * Quicksight
-    * Tableau
-    * PowerBI
-
+  * YAML-based configuration
+  * Git, Linux, Bash scripting
+  * HPC (SLURM)
+* **BI Tools:** QuickSight, Tableau, PowerBI
 
